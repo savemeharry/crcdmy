@@ -1531,6 +1531,11 @@
   transition: transform 0.7s var(--ease-out), opacity 0.3s;
   opacity: 1;
 }
+/* Lift Newton & Socrates — show more head / cut bottom */
+.lect-tile:nth-child(1) .lect-photo img,
+.lect-tile:nth-child(2) .lect-photo img {
+  object-position: center top !important;
+}
 .lect-tile:hover .lect-photo img { transform: scale(1.06); }
 
 .lect-overlay {
