@@ -19,63 +19,92 @@ const envText = await readFile(
 );
 const KEY = envText.match(/GEMINI_API_KEY=(.+)/)[1].trim();
 
-// Vibrant but balanced brand palette — alive, not dead
+// Natural muted materials with a single cyan rim-light accent
+// Aesthetic: Apple / Linear / Figma Config 2024 3D icons
 const PALETTE =
-  'vibrant purple #A84FDB as primary body color, electric cyan #4DE9FF as glowing accent, mint green #42E8BE for secondary accents, white only for specular highlights (≤10% area)';
+  'natural desaturated matte colors — soft off-white, muted cream, warm grey, charcoal, with a SINGLE subtle cyan (#4DE9FF) rim light from the right catching one edge of the subject';
 
 const ICONS = {
   // ----- Scale section -------------------------------------------------
   'icon-corp': {
     subject:
-      `a 3D modern office tower: several layered stories, clean geometric form, vibrant purple (#A84FDB) glossy body with cyan (#4DE9FF) window lights glowing across floors, a soft mint (#42E8BE) accent at the top spire. Crisp studio rim lighting.`,
+      `a 3D miniature modern office tower, clean simple geometric form with subtle horizontal floor lines. Matte warm off-white (#F0EEE8) main body, slightly darker warm grey (#C8C4BC) shadow side. A single soft cyan (#4DE9FF) rim light catches the right edge only.`,
   },
   'icon-uni': {
     subject:
-      `a 3D miniature classical academic building: portico with four slim columns, a triangular pediment, steps leading up. Vibrant purple (#A84FDB) matte body with cyan (#4DE9FF) light glow visible through the gaps between columns and a subtle mint (#42E8BE) highlight on the pediment edge. Clean studio lighting.`,
+      `a 3D miniature classical academic building: four slim columns and a simple triangular pediment with small steps. Matte ivory marble (#EDEAE1) surface, warm cream (#D8D3C4) shadow side. A single soft cyan (#4DE9FF) rim light grazes the right column edge.`,
   },
   'icon-school': {
     subject:
-      `a 3D graduation mortarboard cap, slightly tilted showing depth, with a hanging tassel. Vibrant purple (#A84FDB) glossy cap surface with cyan (#4DE9FF) button at center and a bright mint (#42E8BE) tassel. Studio lighting creating clean specular highlights.`,
+      `a 3D graduation mortarboard cap gently tilted to show depth, with a small hanging tassel. Matte deep navy (#1F2334) cap surface, warm off-white (#EEE9DC) tassel. A single soft cyan (#4DE9FF) rim light catches the right edge of the mortarboard.`,
   },
   'icon-rocket': {
     subject:
-      `a 3D sleek vertical rocket ship, smooth rounded body with fins. Vibrant purple (#A84FDB) main body, cyan (#4DE9FF) nose cone, mint (#42E8BE) fins, and a short cyan (#4DE9FF) glowing flame beneath. Crisp studio lighting.`,
+      `a 3D sleek miniature rocket with a smooth rounded body and compact fins, no portholes. Matte off-white (#EFECE3) body, warm muted terracotta (#B8695A) nose cone and small fins. A single soft cyan (#4DE9FF) rim light on the right side.`,
   },
   'icon-bootcamp': {
     subject:
-      `a 3D cluster of three rounded capsule-shaped figures standing together, no faces no features, simplified human forms. First figure vibrant purple (#A84FDB), second figure cyan (#4DE9FF), third figure mint (#42E8BE). Premium glossy material, studio lighting.`,
+      `a 3D cluster of three rounded human capsule figures standing close together, no faces. All three in matte natural warm grey (#8E8A84), identical material, simple capsule forms. A single soft cyan (#4DE9FF) rim light edges the right-most figure.`,
   },
   'icon-globe': {
     subject:
-      `a 3D translucent globe sphere with latitude and longitude wireframe lines. Vibrant purple (#A84FDB) sphere body with cyan (#4DE9FF) meridian and equator lines glowing, mint (#42E8BE) pole caps. Premium glossy finish.`,
+      `a 3D minimalist sphere with clean latitude and longitude wireframe. Matte dark charcoal (#2A2C35) sphere body with warm off-white (#EAE8E0) wireframe lines of uniform thin weight. A single subtle cyan (#4DE9FF) rim light catches the right hemisphere curve.`,
   },
 
   // ----- Pipeline stages -----------------------------------------------
   'pipe-brief': {
     subject:
-      `a 3D clipboard holding a single sheet of paper with a clip on top. Vibrant purple (#A84FDB) clipboard body, cyan (#4DE9FF) paper, mint (#42E8BE) metal clip. Clean glossy studio shot.`,
+      `a 3D clipboard with a single paper sheet and metal clip, rounded corners. Matte warm cream paper (#F2EEE2), ash-brown (#6B5A4B) clipboard backing, dark charcoal (#2E2E33) clip. A single soft cyan (#4DE9FF) rim light on the right edge.`,
   },
   'pipe-script': {
     subject:
-      `a 3D fountain pen floating diagonally above a single sheet of paper with a short ink stroke trailing from the nib. Vibrant purple (#A84FDB) pen body, cyan (#4DE9FF) nib and ink trail, white paper. Premium studio rendering.`,
+      `a 3D fountain pen floating diagonally above a single piece of paper with a short subtle ink stroke. Matte deep charcoal (#2A2C35) pen body with a small polished silver (#C8C6C2) nib, warm off-white (#F0ECE2) paper. A single soft cyan (#4DE9FF) rim light on the right side of the pen.`,
   },
   'pipe-ai': {
     subject:
-      `a 3D softly rounded translucent cube floating, with a glowing sphere suspended inside. Vibrant purple (#A84FDB) cube faces with cyan (#4DE9FF) inner sphere glow and mint (#42E8BE) edge highlights. Clean product-icon aesthetic.`,
+      `a 3D softly rounded translucent frosted cube floating, with a very subtle warm interior light. Matte light warm grey (#D8D6D2) faces, minimalist, almost architectural. A single soft cyan (#4DE9FF) rim light on the right edge.`,
   },
   'pipe-launch': {
     subject:
-      `a 3D rocket ship taking off, tilted slightly upward with a short flame. Vibrant purple (#A84FDB) body, mint (#42E8BE) fins, cyan (#4DE9FF) engine flame with a small light trail behind. Studio lighting.`,
+      `a 3D miniature rocket lifting off with a tiny exhaust cloud. Matte warm off-white (#F0EDE6) body and fins, very subtle warm grey (#B8B4AB) shadow side. A single soft cyan (#4DE9FF) rim light on the right edge of the body.`,
+  },
+
+  // ----- Achievement badges (F04 motivation conveyor) ------------------
+  // Same Linear/Apple aesthetic — concrete-white base + ONE distinct accent per badge
+  'badge-star': {
+    subject:
+      `a 3D five-pointed star medal shape, slightly tilted showing depth, floating. Base material: matte warm concrete-white (#EDECE6). The center circle / inner dot of the star is a vivid electric purple (#AF33E4). Clean minimalist form, no glossy highlights, soft diffused lighting.`,
+  },
+  'badge-bolt': {
+    subject:
+      `a 3D stylized lightning bolt symbol, rounded edges, slightly tilted. Base material: matte warm concrete-white (#EDECE6). The inside core groove of the bolt glows with a vivid cyan (#4DE9FF) color. Clean minimalist form, no glossy highlights, soft diffused lighting.`,
+  },
+  'badge-target': {
+    subject:
+      `a 3D concentric target / bullseye puck with three rings, slightly tilted. Outer rings are matte warm concrete-white (#EDECE6). The central bullseye is a vivid magenta-pink (#F472B6). Clean minimalist form, no glossy highlights, soft diffused lighting.`,
+  },
+  'badge-trophy': {
+    subject:
+      `a 3D small trophy cup on a small base, side handles, slightly tilted. Base material: matte warm concrete-white (#EDECE6). The inside of the cup and the handle accents are warm yellow-gold (#FFD95A). Clean minimalist form, no glossy highlights, soft diffused lighting.`,
+  },
+  'badge-flame': {
+    subject:
+      `a 3D stylized flame shape with rounded silhouette. Outer shell is matte warm concrete-white (#EDECE6). The inner glowing core is a vivid coral-orange (#FF8A65). Clean minimalist form, no glossy highlights, soft diffused lighting.`,
+  },
+  'badge-crown': {
+    subject:
+      `a 3D minimalist three-pointed crown with rounded arches. Base material: matte warm concrete-white (#EDECE6). A single gemstone at the center arch is vivid mint-green (#42E8BE). Clean minimalist form, no glossy highlights, soft diffused lighting.`,
   },
 };
 
 const iconStyleSuffix =
-  ` Isolated 3D object centered in frame, floating with no ground, very soft diffused lighting, ` +
-  `smooth matte plastic material, Apple-style product-icon minimalism — clean, simple, airy. Low-saturation pastel rendering. ` +
-  `ABSOLUTELY NO outline, NO border, NO frame, NO background objects, NO reflections on a surface. ` +
-  `CRITICAL: pure solid absolute pitch-black #000000 background in every pixel outside the subject. No gradient, no haze, no ambient glow filling the background. Subject floats on ink-black void. ` +
-  `Palette: strictly ${PALETTE}. Subject should read as LIGHT and AIRY, not saturated, not electric. No gold, amber, orange, red. Avoid dark purples — stick to pale pastels. ` +
-  `No text, no logos, no UI. Square 1:1 composition with subject taking ~50% of frame.`;
+  ` Isolated 3D object centered in frame, floating with no ground. Soft diffused studio lighting from the upper-left. ` +
+  `Matte non-reflective surface — NO shiny cartoon specular highlights, NO bubble reflections, NO gloss. ` +
+  `Apple / Linear / Figma Config 2024 3D-icon aesthetic: clean, understated, editorial. ` +
+  `ABSOLUTELY NO outline, NO border, NO frame, NO background objects, NO reflections on a surface, NO ground shadow. ` +
+  `CRITICAL: pure solid absolute pitch-black #000000 background in every pixel outside the subject. No gradient, no haze, no atmospheric glow, no ambient light filling the backdrop. Subject floats on ink-black void. ` +
+  `Material: ${PALETTE}. Colors should be natural, desaturated, muted — NOT vibrant, NOT saturated, NOT neon. The only accent allowed beyond the base palette is the subtle cyan (#4DE9FF) rim light on the right edge. ` +
+  `No text, no logos, no UI. Square 1:1 composition with subject taking ~55% of frame.`;
 
 async function generateImage(name, spec) {
   const prompt = spec.subject + '.' + iconStyleSuffix;

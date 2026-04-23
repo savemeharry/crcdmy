@@ -258,19 +258,19 @@
     const xpBar = document.getElementById('xpBar');
     if (!track) return;
 
-    // Six badges — swap these SVG ids with your generated 3D badges later
+    // Six 3D badges, concrete-white matte with distinct accents
     const BADGES = [
-      { id: 'i-star' },
-      { id: 'i-spark' },
-      { id: 'i-target' },
-      { id: 'i-trophy' },
-      { id: 'i-flame' },
-      { id: 'i-star' },
+      'badge-star',
+      'badge-bolt',
+      'badge-target',
+      'badge-trophy',
+      'badge-flame',
+      'badge-crown',
     ];
-    BADGES.forEach((b) => {
+    BADGES.forEach((name) => {
       const el = document.createElement('div');
       el.className = 'xp-badge';
-      el.innerHTML = `<svg><use href="#${b.id}"/></svg>`;
+      el.innerHTML = `<img src="assets/icons-3d/${name}.png" alt="">`;
       track.appendChild(el);
     });
 

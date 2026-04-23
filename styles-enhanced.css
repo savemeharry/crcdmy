@@ -363,8 +363,8 @@
   margin-bottom: 14px;
 }
 .vis-xp-card-badges .xp-conveyor-viewport {
-  height: 104px;                  /* tall enough to fit scale-up without clip */
-  overflow: hidden;               /* only horizontal track clipping */
+  height: 128px;                  /* tall enough to fit 80px badge scaled 1.38 */
+  overflow: hidden;
   padding-left: 0;
   padding-right: 0;
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -392,11 +392,9 @@
 
 /* Badge sizes — fit inside subcard */
 .f-04 .xp-badge {
-  width: 58px;
-  height: 58px;
-  border-radius: 16px;
+  width: 80px;
+  height: 80px;
 }
-.f-04 .xp-badge svg { width: 24px; height: 24px; }
 .f-04 .xp-conveyor-track { gap: 12px; }
 
 /* 3D icons — PNG with alpha transparency (no blend mode needed) */
@@ -1308,22 +1306,21 @@
 
 .xp-badge {
   flex-shrink: 0;
-  width: 66px;
-  height: 66px;
+  width: 84px;
+  height: 84px;
   border-radius: 18px;
-  background: linear-gradient(145deg, rgba(175, 51, 228, 0.22), rgba(66, 232, 190, 0.1));
-  border: 1px solid rgba(175, 51, 228, 0.42);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: grid;
   place-items: center;
   position: relative;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: 6px;
 }
-.xp-badge svg {
-  width: 28px;
-  height: 28px;
-  color: #fff;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 8px rgba(175, 51, 228, 0.6));
+.xp-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 /* Badge highlight — smooth scale-up pulse */
@@ -1334,11 +1331,12 @@
 .xp-badge.hi::before {
   content: '';
   position: absolute;
-  inset: -14px;
-  border-radius: 28px;
-  background: radial-gradient(circle, rgba(175, 51, 228, 0.45), transparent 65%);
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
   z-index: -1;
   animation: hiGlow 1.6s ease-out forwards;
+  pointer-events: none;
 }
 @keyframes hiPulse {
   0%   { transform: scale(1); }
