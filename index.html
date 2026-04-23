@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Creata Academy — обучение нового формата</title>
+<meta name="description" content="Creata Academy — платформа для академий нового поколения. Интерактивная сцена вместо скучных видеокурсов. Корпоративный онбординг, школы, университеты, апскилл.">
+
+<link rel="icon" href="assets/cs-icon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Onest:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-features.css">
+<link rel="stylesheet" href="styles-enhanced.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     Inline SVG icon system — reused via <use href="#icon-X">
+     ========================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Product icons -->
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4l12 8-12 8z"/></symbol>
+    <symbol id="i-waveform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h1M7 8v8M11 4v16M15 8v8M19 12h2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5.4L20 10l-5.4 2.6L12 18l-2.4-5.4L4 10l5.6-1.6z"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M8.5 14.5c0-2 1.5-3.5 1.5-6 0-3-2-4.5-2-4.5 0 2-2 3.5-3 5.5s-1 5.5 1 7 5 1.5 7 0 3-4 2-7-3-4-3-4c0 2-1 3.5-1 5s1 3 0 4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 18l-5.9 3 1.2-6.5L2.5 9.9 9.1 9z"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"><path d="M7 4h10v3a5 5 0 01-10 0z"/><path d="M17 5h2a2 2 0 002-2M7 5H5a2 2 0 01-2-2"/><path d="M8 20h8M12 13v7"/></symbol>
+
+    <!-- Pipeline icons -->
+    <symbol id="i-brief" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5M8 17h8"/></symbol>
+    <symbol id="i-script" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h12M4 18h8"/><path d="M21 18l-3-3 3-3"/></symbol>
+    <symbol id="i-ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M21 12h-3M6 12H3M18.36 5.64l-2.12 2.12M7.76 16.24l-2.12 2.12M18.36 18.36l-2.12-2.12M7.76 7.76L5.64 5.64"/><circle cx="12" cy="12" r="4"/></symbol>
+    <symbol id="i-launch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l5-5 6 6-5 5z"/><path d="M14 7l3-3 3 3-3 3z"/><path d="M4 20l3-1"/></symbol>
+
+    <!-- Scale icons -->
+    <symbol id="i-school" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6-9 5z"/><path d="M6 12v5c0 .5.2 1 .6 1.3C8 19.5 9.8 20 12 20s4-.5 5.4-1.7c.4-.3.6-.8.6-1.3v-5"/></symbol>
+    <symbol id="i-university" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M19 21V10M9 21v-6h6v6"/><path d="M12 3L3 8h18z"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 012-2h12a2 2 0 012 2v16"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/><path d="M3 21h18"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 11l-1.5 1.5m-5 5L5 20m2.5-4.5L4 16m4 4l.5-2.5m7.5-8.5c0 5-4 9-9 9 0-5 4-9 9-9zm0 0c1.5 0 2 .5 2 2s-.5 2-2 2"/><circle cx="14.5" cy="9.5" r="1.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16a2 2 0 012-2h14V2H6a2 2 0 00-2 2z"/><path d="M4 20a2 2 0 002 2h14"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.78 0L12 5.67l-1.02-1.07a5.5 5.5 0 00-7.78 7.78L12 21l8.8-8.62a5.5 5.5 0 000-7.78z"/></symbol>
+
+    <!-- Misc -->
+    <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+
+    <!-- Brand logo mark — CREATA in capsule -->
+    <!-- The full logo is referenced as <img src> too; this is the small inline mark -->
+  </defs>
+</svg>
+
+<!-- =========================================================
+     NAV
+     ========================================================= -->
+<nav class="nav" aria-label="Основное меню">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand" aria-label="Creata Academy — на главную">
+      <img class="brand-mark" src="assets/creata-logo.svg" alt="Creata Academy">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#product">Продукт</a></li>
+      <li><a href="#format">Формат</a></li>
+      <li><a href="#pipeline">Пайплайн</a></li>
+      <li><a href="#enterprise">Для бизнеса</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#cta" class="nav-cta">Запросить демо</a>
+  </div>
+</nav>
+
+<!-- =========================================================
+     HERO — typography first, CSS aurora
+     ========================================================= -->
+<header id="top" class="hero">
+  <div class="hero-photo" aria-hidden="true">
+    <img src="assets/hero.png" alt="">
+    <div class="hero-photo-blur hero-photo-blur-1"></div>
+    <div class="hero-photo-blur hero-photo-blur-2"></div>
+    <div class="hero-photo-blur hero-photo-blur-3"></div>
+    <div class="hero-photo-blur hero-photo-blur-4"></div>
+  </div>
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Для корпораций · университетов · школ</span>
+
+    <h1 class="display">
+      <span class="shine">Интерактивная академия</span><br>
+      <span class="hl">нового поколения.</span>
+    </h1>
+
+    <p class="hero-sub">
+      Интерактивные курсы под вашим брендом — для корпоративных академий,
+      университетов и школ. Не PDF, не слайды, не записи лекций.
+    </p>
+
+    <div class="hero-cta-row">
+      <a href="#cta" class="btn btn-primary">
+        Запросить демо
+        <span class="btn-arrow"><svg width="16" height="16"><use href="#i-arrow-right"/></svg></span>
+      </a>
+      <a href="#product" class="btn btn-ghost">Посмотреть продукт</a>
+    </div>
+
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <span class="hero-metric-val">×10</span>
+        <span class="hero-metric-label">быстрее продакшн<br>чем классическое видео</span>
+      </div>
+      <span class="hero-metric-sep"></span>
+      <div class="hero-metric">
+        <span class="hero-metric-val">×5</span>
+        <span class="hero-metric-label">выше completion<br>rate в пилотах</span>
+      </div>
+      <span class="hero-metric-sep"></span>
+      <div class="hero-metric">
+        <span class="hero-metric-val">30+</span>
+        <span class="hero-metric-label">языков<br>без переверстки</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- =========================================================
+     TICKER — generic, not event-specific
+     ========================================================= -->
+<section class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="tickerTrack">
+    <span class="ticker-item"><strong>Живой голос</strong></span>
+    <span class="ticker-item">Реактивная инфографика</span>
+    <span class="ticker-item"><strong>Практика внутри урока</strong></span>
+    <span class="ticker-item">Квизы · тетрадь · домашка</span>
+    <span class="ticker-item"><strong>XP и бейджи</strong></span>
+    <span class="ticker-item">Команды и лидерборды</span>
+    <span class="ticker-item"><strong>Любой язык</strong></span>
+    <span class="ticker-item">White-label брендирование</span>
+    <span class="ticker-item"><strong>SCORM / LTI</strong></span>
+    <span class="ticker-item">Аналитика и прогресс</span>
+  </div>
+</section>
+
+<!-- =========================================================
+     MANIFESTO
+     ========================================================= -->
+<section class="manifesto">
+  <div class="manifesto-glow" aria-hidden="true"></div>
+  <div class="wrap reveal" style="position:relative;z-index:2">
+    <p class="manifesto-quote">
+      <span class="dim">Видео-курсы — это монолог.<br>Учебники — это тишина.</span><br>
+      <em>Мы собрали</em> <span class="hl">сцену.</span>
+    </p>
+  </div>
+</section>
+
+<!-- =========================================================
+     PRODUCT — showcase with hero player mockup
+     ========================================================= -->
+<section id="product" class="lesson">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Продукт</span>
+      <h2 class="section-title">
+        Не курс.<br>
+        <em>Сцена.</em> И ученик — <span class="hl">участник.</span>
+      </h2>
+      <p class="section-sub">
+        Голос ведёт по сегментам — между ними оживают живые сцены:
+        диаграммы, сравнения, таймлайны, задания. Один поток без переключений
+        между вкладками, гугл-доками и ссылками из чатов.
+      </p>
+    </div>
+
+    <div class="lesson-grid reveal">
+      <div class="lesson-copy">
+        <h2>Один урок —<br><em>шесть слоёв.</em></h2>
+        <p>
+          Видеоурок стал интерфейсом. Голос ведёт сценарий, сцены появляются
+          вместе с ним. Кликай по слоям справа — увидишь, как устроен каждый.
+        </p>
+
+        <div class="lesson-features">
+          <div class="lesson-feature">
+            <svg><use href="#i-waveform"/></svg>
+            Живой голос
+          </div>
+          <div class="lesson-feature">
+            <svg><use href="#i-layers"/></svg>
+            Живая инфографика
+          </div>
+          <div class="lesson-feature">
+            <svg><use href="#i-check"/></svg>
+            Квиз в сценарии
+          </div>
+          <div class="lesson-feature">
+            <svg><use href="#i-spark"/></svg>
+            XP за прогресс
+          </div>
+        </div>
+      </div>
+
+      <div class="player-wrap">
+        <div class="player" id="demoPlayer">
+          <div class="player-chrome">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span>/lesson · интерактивный пример</span>
+          </div>
+
+          <div class="player-scene">
+            <aside class="player-sidebar">
+              <div class="player-sidebar-label">Сегменты</div>
+              <ul class="seg-list" id="demoSegList">
+                <li class="seg-item active" data-seg="1"><span class="seg-dot"></span>Хук</li>
+                <li class="seg-item"        data-seg="2"><span class="seg-dot"></span>Контекст</li>
+                <li class="seg-item"        data-seg="3"><span class="seg-dot"></span>Ключевая идея</li>
+                <li class="seg-item"        data-seg="4"><span class="seg-dot"></span>Сравнение</li>
+                <li class="seg-item"        data-seg="5"><span class="seg-dot"></span>Практика</li>
+                <li class="seg-item"        data-seg="6"><span class="seg-dot"></span>Итог</li>
+              </ul>
+            </aside>
+
+            <div class="player-canvas" id="demoCanvas">
+
+              <!-- Segment 1 — HOOK: big-number hero -->
+              <div class="seg-view active" data-view="1">
+                <div class="player-heading-label">01 · хук</div>
+                <div class="seg-hook">
+                  <div class="seg-hook-num">95%</div>
+                  <div class="seg-hook-cap">онлайн-курсов бросают до середины. Сегодня разберёмся — почему.</div>
+                </div>
+              </div>
+
+              <!-- Segment 2 — CONTEXT: chips + text -->
+              <div class="seg-view" data-view="2">
+                <div class="player-heading-label">02 · контекст</div>
+                <h3 class="player-title">Три причины, по которым<br>курс не доходит до конца.</h3>
+                <div class="seg-chips">
+                  <span class="seg-chip">Нет обратной связи</span>
+                  <span class="seg-chip">Монотонный формат</span>
+                  <span class="seg-chip">Нет мотивации продолжать</span>
+                </div>
+              </div>
+
+              <!-- Segment 3 — KEY IDEA: typographic -->
+              <div class="seg-view" data-view="3">
+                <div class="player-heading-label">03 · ключевая мысль</div>
+                <h3 class="player-title">Между вопросом<br>и ответом — <span class="key-accent">пауза.</span></h3>
+                <p class="player-text">
+                  В этой паузе — пространство для выбора. Она тренируется,
+                  как мышца — каждым маленьким упражнением.
+                </p>
+              </div>
+
+              <!-- Segment 4 — COMPARISON: two stat cards with bars -->
+              <div class="seg-view" data-view="4">
+                <div class="player-heading-label">04 · сравнение</div>
+                <div class="seg-stat-grid">
+                  <div class="seg-stat seg-stat-bad">
+                    <div class="seg-stat-tag">без паузы</div>
+                    <div class="seg-stat-val">34%</div>
+                    <div class="seg-stat-bar"><div class="seg-stat-fill" style="--w:34%"></div></div>
+                    <div class="seg-stat-desc">реактивная реакция</div>
+                  </div>
+                  <div class="seg-stat-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                  </div>
+                  <div class="seg-stat seg-stat-good">
+                    <div class="seg-stat-tag">с паузой</div>
+                    <div class="seg-stat-val">78%</div>
+                    <div class="seg-stat-bar"><div class="seg-stat-fill" style="--w:78%"></div></div>
+                    <div class="seg-stat-desc">осознанный выбор</div>
+                  </div>
+                </div>
+                <div class="seg-stat-caption">Правильность решения в тестах на реакцию (n=420)</div>
+              </div>
+
+              <!-- Segment 5 — PRACTICE: inline quiz -->
+              <div class="seg-view" data-view="5">
+                <div class="player-heading-label">05 · практика</div>
+                <div class="seg-quiz">
+                  <div class="seg-quiz-q">Между вопросом и ответом находится…</div>
+                  <div class="seg-quiz-opts">
+                    <button class="seg-quiz-opt" data-correct="0">Рефлекс</button>
+                    <button class="seg-quiz-opt" data-correct="1">Пауза</button>
+                    <button class="seg-quiz-opt" data-correct="0">Эмоция</button>
+                    <button class="seg-quiz-opt" data-correct="0">Оценка</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Segment 6 — OUTCOME: summary -->
+              <div class="seg-view" data-view="6">
+                <div class="player-heading-label">06 · итог</div>
+                <div class="seg-summary">
+                  <div class="seg-summary-head">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+                    Урок пройден
+                  </div>
+                  <div class="seg-summary-row">
+                    <span>Правильных ответов</span>
+                    <strong>4 из 5</strong>
+                  </div>
+                  <div class="seg-summary-row">
+                    <span>Время</span>
+                    <strong>5:47</strong>
+                  </div>
+                  <div class="seg-summary-row seg-summary-xp">
+                    <span>Начислено</span>
+                    <strong>+80 XP</strong>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="player-controls">
+            <button class="player-play" aria-label="Играть">
+              <svg width="14" height="14"><use href="#i-play"/></svg>
+            </button>
+            <span class="player-time" id="demoTime">02:13 / 05:47</span>
+            <div class="player-progress">
+              <div class="player-progress-fill" id="demoProgressFill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FEATURES
+     ========================================================= -->
+<section id="format" class="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Формат</span>
+      <h2 class="section-title">
+        Всё, что было двумя часами<br>
+        на YouTube — <span class="hl">здесь за шесть минут.</span>
+      </h2>
+      <p class="section-sub">
+        Каждый блок ниже — отдельный слой плеера. По отдельности — приятно.
+        Вместе — уже ни на что не похоже.
+      </p>
+    </div>
+
+    <!-- 01 — Voice -->
+    <article class="feature f-01">
+      <div class="feature-copy reveal">
+        <span class="feature-num"><span class="num-mark"></span>01 · голос</span>
+        <h3>Живой голос,<br>а не монотонное аудио.</h3>
+        <p>
+          Один голос ведёт весь курс — ученик к нему привыкает, узнаёт, идёт за ним.
+          Интонации, паузы, ударения — прописаны в сценарии, чтобы ни одна фамилия
+          и ни один термин не звучал как текст-в-речь.
+        </p>
+        <ul class="feature-bullets">
+          <li>Разные голоса под разные модули и аудитории</li>
+          <li>Каждое слово синхронизировано с визуальной сценой</li>
+          <li>Встроенный контроль темпа и навигации по сегментам</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="fv-card">
+          <div class="vis-voice-header">
+            <div class="vis-voice-avatar">
+              <svg><use href="#i-waveform"/></svg>
+            </div>
+            <div>
+              <div class="vis-voice-name">Живой голос курса</div>
+              <div class="vis-voice-meta">кадрируется под бренд и аудиторию</div>
+            </div>
+            <div class="vis-voice-live">● live</div>
+          </div>
+          <div class="vis-voice-wave" id="voiceWave" aria-hidden="true"></div>
+          <div class="vis-voice-script">
+            «Между вопросом и ответом —
+            <span class="accent">пауза</span>. И эта пауза тренируется.»
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 — Infographic -->
+    <article class="feature f-02 flip">
+      <div class="feature-copy reveal">
+        <span class="feature-num"><span class="num-mark"></span>02 · структура</span>
+        <h3>Живая инфографика,<br>а не картинка из слайда.</h3>
+        <p>
+          Каждый кадр урока — <strong>интерактивная сцена</strong>. Цифры
+          анимируются, диаграммы рисуются, тултипы открываются. Всё на дизайн-системе
+          заказчика — в любых языках, без «съехавшего шрифта».
+        </p>
+        <ul class="feature-bullets">
+          <li>Шаблоны сцен адаптируются под любой предмет</li>
+          <li>Кириллица, арабица, CJK — одинаково аккуратно</li>
+          <li>До десяти уникальных сцен в одной теме</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="fv-card vis-infographic" id="infoCard">
+          <!-- slide A: donut — lesson anatomy -->
+          <div class="info-slide active" data-slide="a">
+            <div class="info-slide-label">03 · анатомия урока</div>
+            <div class="info-slide-title">Из чего собран<br>один урок Creata</div>
+            <div class="info-donut-wrap">
+              <div class="info-donut-svg-wrap">
+                <svg class="info-donut" viewBox="0 0 180 180" aria-hidden="true">
+                  <defs>
+                    <filter id="donutGlow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="1.2"/>
+                    </filter>
+                  </defs>
+                  <g transform="rotate(-90 90 90)">
+                    <!-- track -->
+                    <circle cx="90" cy="90" r="70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="18"/>
+                    <!-- 40% voice+scenes · purple -->
+                    <circle class="donut-seg" cx="90" cy="90" r="70" fill="none" stroke="#AF33E4" stroke-width="18" stroke-linecap="butt" stroke-dasharray="174 440" stroke-dashoffset="0" style="--delay:0.2s"/>
+                    <!-- 22% infographic · coral -->
+                    <circle class="donut-seg" cx="90" cy="90" r="70" fill="none" stroke="#FF8A65" stroke-width="18" stroke-linecap="butt" stroke-dasharray="96 440" stroke-dashoffset="-174" style="--delay:0.4s"/>
+                    <!-- 20% practice+quiz · cyan -->
+                    <circle class="donut-seg" cx="90" cy="90" r="70" fill="none" stroke="#4DE9FF" stroke-width="18" stroke-linecap="butt" stroke-dasharray="88 440" stroke-dashoffset="-270" style="--delay:0.6s"/>
+                    <!-- 10% notes+task · mint -->
+                    <circle class="donut-seg" cx="90" cy="90" r="70" fill="none" stroke="#42E8BE" stroke-width="18" stroke-linecap="butt" stroke-dasharray="44 440" stroke-dashoffset="-358" style="--delay:0.8s"/>
+                    <!-- 8% resources · amber -->
+                    <circle class="donut-seg" cx="90" cy="90" r="70" fill="none" stroke="#F5B24D" stroke-width="18" stroke-linecap="butt" stroke-dasharray="36 440" stroke-dashoffset="-402" style="--delay:1.0s"/>
+                  </g>
+                </svg>
+                <div class="info-donut-center">
+                  <div class="info-donut-val">6 мин</div>
+                  <div class="info-donut-lbl">один урок</div>
+                </div>
+              </div>
+              <div class="info-donut-legend">
+                <div class="info-donut-row" style="--c:#AF33E4"><span class="info-donut-dot"></span><span class="info-donut-name">Голос и сцены</span><strong>40%</strong></div>
+                <div class="info-donut-row" style="--c:#FF8A65"><span class="info-donut-dot"></span><span class="info-donut-name">Инфографика</span><strong>22%</strong></div>
+                <div class="info-donut-row" style="--c:#4DE9FF"><span class="info-donut-dot"></span><span class="info-donut-name">Практика · квизы</span><strong>20%</strong></div>
+                <div class="info-donut-row" style="--c:#42E8BE"><span class="info-donut-dot"></span><span class="info-donut-name">Записи · задание</span><strong>10%</strong></div>
+                <div class="info-donut-row" style="--c:#F5B24D"><span class="info-donut-dot"></span><span class="info-donut-name">Ресурсы</span><strong>8%</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- slide B: completion rate bars -->
+          <div class="info-slide" data-slide="b">
+            <div class="info-slide-label">04 · сравнение</div>
+            <div class="info-slide-title">Completion rate<br>по форматам</div>
+            <div class="info-bars">
+              <div class="info-bar">
+                <span class="info-bar-lbl">Видео-курс</span>
+                <div class="info-bar-track"><div class="info-bar-fill" style="--w: 12%"></div></div>
+                <span class="info-bar-val">12%</span>
+              </div>
+              <div class="info-bar">
+                <span class="info-bar-lbl">PDF + тесты</span>
+                <div class="info-bar-track"><div class="info-bar-fill" style="--w: 23%"></div></div>
+                <span class="info-bar-val">23%</span>
+              </div>
+              <div class="info-bar info-bar-hero">
+                <span class="info-bar-lbl">Creata Academy</span>
+                <div class="info-bar-track"><div class="info-bar-fill" style="--w: 78%"></div></div>
+                <span class="info-bar-val">78%</span>
+              </div>
+            </div>
+            <div class="info-slide-foot">Внутренние замеры пилотов · n=2&nbsp;400</div>
+          </div>
+
+          <!-- slide indicator -->
+          <div class="info-dots">
+            <span class="info-dot active" data-goto="a"></span>
+            <span class="info-dot" data-goto="b"></span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 — Quiz -->
+    <article class="feature f-03">
+      <div class="feature-copy reveal">
+        <span class="feature-num"><span class="num-mark"></span>03 · практика</span>
+        <h3>Практика — в уроке,<br>а не после.</h3>
+        <p>
+          Ученик не уходит в другую вкладку, чтобы «закрепить пройденное».
+          Между сегментами встают <strong>квизы, инлайн-поля, редактируемые
+          таблицы</strong> прямо в плеере. Без переключений. Без потери контекста.
+        </p>
+        <ul class="feature-bullets">
+          <li>Квиз — один вопрос на экран, адаптивная подсветка</li>
+          <li>Встроенные инпуты, таблицы, дропзоны</li>
+          <li>Всё сохраняется в профиль ученика автоматически</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="fv-card vis-quiz" id="quizCard">
+          <!-- quiz state -->
+          <div class="quiz-state active" data-state="quiz">
+            <div class="quiz-q-num">вопрос 5 из 5</div>
+            <div class="quiz-q">Между вопросом и ответом — это…</div>
+            <div class="quiz-opts">
+              <button class="quiz-opt" data-correct="0"><span></span>Рефлекс</button>
+              <button class="quiz-opt" data-correct="1"><span class="quiz-opt-mark"><svg width="12" height="12"><use href="#i-check"/></svg></span>Пауза</button>
+              <button class="quiz-opt" data-correct="0"><span></span>Эмоция</button>
+              <button class="quiz-opt" data-correct="0"><span></span>Оценка</button>
+            </div>
+          </div>
+
+          <!-- result state -->
+          <div class="quiz-state" data-state="result">
+            <div class="quiz-result-check">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div class="quiz-result-title">Верно.</div>
+            <div class="quiz-result-stats">
+              <div class="quiz-result-stat">
+                <span>Правильных</span>
+                <strong>5 / 5</strong>
+              </div>
+              <div class="quiz-result-stat">
+                <span>Время</span>
+                <strong>01:12</strong>
+              </div>
+              <div class="quiz-result-stat quiz-result-xp">
+                <span>Зачислено</span>
+                <strong>+120 XP</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 — Motivation -->
+    <article class="feature f-04 flip">
+      <div class="feature-copy reveal">
+        <span class="feature-num"><span class="num-mark"></span>04 · мотивация</span>
+        <h3>Прогресс виден —<br>и его хочется продолжать.</h3>
+        <p>
+          Каждый шаг засчитывается. Бейдж за новую тему, стрик за неделю подряд,
+          XP после квиза. Не «геймификация для галочки» — механика,
+          из-за которой возвращаются к курсу без напоминаний от HR.
+        </p>
+        <ul class="feature-bullets">
+          <li>Индивидуальные XP, уровни, бейджи</li>
+          <li>Streak, лидерборды, командный прогресс</li>
+          <li>Всё под брендингом заказчика</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal" id="xpCard">
+        <!-- Badges — wide top card -->
+        <div class="vis-xp-card vis-xp-card-badges">
+          <div class="vis-xp-card-head">
+            <div class="vis-xp-label">Бейджи</div>
+            <div class="vis-xp-sub">+1 сегодня</div>
+          </div>
+          <div class="xp-conveyor-viewport">
+            <div class="xp-conveyor-track" id="xpConveyor"></div>
+          </div>
+          <div class="xp-pop" id="xpPop" aria-hidden="true">+50 XP</div>
+        </div>
+
+        <!-- Progress — narrow bottom card -->
+        <div class="vis-xp-card">
+          <div class="vis-xp-card-head">
+            <div class="vis-xp-label">Твой прогресс</div>
+            <div class="vis-xp-lvl">Уровень 4</div>
+          </div>
+          <div class="vis-xp-val" id="xpValue">2 310<span class="vis-xp-unit">xp</span></div>
+          <div class="vis-xp-bar"><div class="vis-xp-bar-fill" id="xpBar"></div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 — Flow -->
+    <article class="feature f-05">
+      <div class="feature-copy reveal">
+        <span class="feature-num"><span class="num-mark"></span>05 · поток</span>
+        <h3>Всё в одном потоке.<br>Без вкладок и PDF-ок.</h3>
+        <p>
+          После лекции в одном окне открываются <strong>Практика, Теория,
+          Записи, Что почитать, Задание</strong>. Ученик не уходит в гугл-документ
+          и не ищет ссылки в чате. Всё здесь.
+        </p>
+        <ul class="feature-bullets">
+          <li>Editable-таблицы и инпуты сохраняются в профиль</li>
+          <li>Ресурсы с превью — видео, приложения, статьи</li>
+          <li>Задание с dropzone и текстовыми ответами</li>
+        </ul>
+      </div>
+      <div class="feature-visual reveal">
+        <div class="vis-tabs">
+          <div class="vis-tabs-strip">
+            <button class="vis-tab active">Практика</button>
+            <button class="vis-tab">Теория</button>
+            <button class="vis-tab">Записи</button>
+            <button class="vis-tab">Что почитать</button>
+            <button class="vis-tab">Задание</button>
+          </div>
+          <div class="vis-tabs-body">
+            <div class="vis-task-eyebrow">задание 2 · 5 мин</div>
+            <div class="vis-task-title">Опиши ситуацию, где ты не поставил паузу.</div>
+            <textarea class="vis-task-input" placeholder="Пиши сюда...">Не поставил паузу во время пресейла — сразу ответил ценой, потерял контекст о потребности клиента...</textarea>
+            <div class="vis-task-table">
+              <div class="vis-task-th">Стимул</div>
+              <div class="vis-task-th">Реакция</div>
+              <div class="vis-task-th">Как лучше</div>
+              <div class="vis-task-td">Вопрос в лоб</div>
+              <div class="vis-task-td">Сразу цена</div>
+              <div class="vis-task-td editable">___</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =========================================================
+     LECTURERS — any expert becomes a course
+     ========================================================= -->
+<section id="lecturers" class="lecturers">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Лекторы</span>
+      <h2 class="section-title">
+        Любой эксперт —<br>
+        <span class="hl">автор курса.</span>
+      </h2>
+      <p class="section-sub">
+        Голос методолога, внутренний эксперт, известный автор, даже исторический персонаж —
+        один сценарий превращается в полноценный интерактивный курс с его «голосом» и характером.
+      </p>
+    </div>
+
+    <div class="lect-grid reveal stagger">
+      <article class="lect-tile" style="--lect-accent: #AF33E4">
+        <div class="lect-photo">
+          <img src="assets/lecturers/lect-1.jpg" alt="" onerror="this.style.opacity=0">
+        </div>
+        <div class="lect-overlay"></div>
+        <div class="lect-body">
+          <div class="lect-tag">Физика и мышление</div>
+          <h3 class="lect-name">Исаак Ньютон</h3>
+          <p class="lect-desc">«Три закона движения» — 7 уроков о том, как смотреть на мир глазами учёного, который переписал физику в одиночку.</p>
+          <div class="lect-meta">
+            <span>7 уроков</span>
+            <span>·</span>
+            <span>45 мин в неделю</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="lect-tile" style="--lect-accent: #FF8A65">
+        <div class="lect-photo">
+          <img src="assets/lecturers/lect-2.jpg" alt="" onerror="this.style.opacity=0">
+        </div>
+        <div class="lect-overlay"></div>
+        <div class="lect-body">
+          <div class="lect-tag">Критическое мышление</div>
+          <h3 class="lect-name">Сократ</h3>
+          <p class="lect-desc">«Задавать правильные вопросы» — практический курс по диалогу и самоанализу, построенный на методе мастера.</p>
+          <div class="lect-meta">
+            <span>9 уроков</span>
+            <span>·</span>
+            <span>30 мин в неделю</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="lect-tile" style="--lect-accent: #42E8BE">
+        <div class="lect-photo">
+          <img src="assets/lecturers/lect-3.jpg" alt="" onerror="this.style.opacity=0">
+        </div>
+        <div class="lect-overlay"></div>
+        <div class="lect-body">
+          <div class="lect-tag">Коммуникация</div>
+          <h3 class="lect-name">Внутренний эксперт</h3>
+          <p class="lect-desc">Ваш ведущий методолог, product-lead или CEO — собственный курс за неделю, в стиле и с голосом автора.</p>
+          <div class="lect-meta">
+            <span>под ваш бриф</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     PIPELINE — cinematic reveal, no model names
+     ========================================================= -->
+<section id="pipeline" class="pipeline">
+  <div class="pipeline-glow" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Производство</span>
+      <h2 class="section-title">
+        От брифа до готовой академии —<br>
+        <span class="hl">четыре шага.</span>
+      </h2>
+      <p class="section-sub">
+        Ваш эксперт пишет содержание. Наш пайплайн превращает его в интерактивный
+        курс на брендированной платформе. Одна лекция — от часа до суток.
+      </p>
+    </div>
+
+    <div class="pipeline-stage reveal stagger">
+      <div class="pipeline-line" aria-hidden="true"></div>
+
+      <div class="pipe-node">
+        <div class="pipe-node-dot"><img src="assets/icons-3d/pipe-brief.png" alt=""></div>
+        <div class="pipe-node-step">шаг 01</div>
+        <h4>Бриф и цели</h4>
+        <p>Аудитория, бренд, тон, предмет. Берём требования к обучению и метрики успеха.</p>
+      </div>
+
+      <div class="pipe-node">
+        <div class="pipe-node-dot"><img src="assets/icons-3d/pipe-script.png" alt=""></div>
+        <div class="pipe-node-step">шаг 02</div>
+        <h4>Экспертный сценарий</h4>
+        <p>Ваш методолог или наш эксперт пишет содержание. Мы отвечаем за формат.</p>
+      </div>
+
+      <div class="pipe-node">
+        <div class="pipe-node-dot"><img src="assets/icons-3d/pipe-ai.png" alt=""></div>
+        <div class="pipe-node-step">шаг 03</div>
+        <h4>Производство</h4>
+        <p>Голос, визуалы, интерактив, квизы, практика — собираем за часы, а не за недели.</p>
+      </div>
+
+      <div class="pipe-node">
+        <div class="pipe-node-dot"><img src="assets/icons-3d/pipe-launch.png" alt=""></div>
+        <div class="pipe-node-step">шаг 04</div>
+        <h4>Своя академия</h4>
+        <p>Брендированная платформа, свой домен, аналитика. Интеграция в LMS по запросу.</p>
+      </div>
+    </div>
+
+    <div class="pipeline-capsule reveal">
+      <span class="pipeline-capsule-label">среднее время</span>
+      <span class="pipeline-capsule-value">от часа — до готового урока</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SCALE — target markets with proper SVG icons
+     ========================================================= -->
+<section id="scale" class="scale">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Кому подходит</span>
+      <h2 class="section-title">
+        Любая <em>аудитория.</em><br>
+        Любой <span class="hl">предмет.</span>
+      </h2>
+      <p class="section-sub">
+        Формат не зависит от темы. Так же уверенно работает в корпоративном онбординге,
+        университетском курсе и детской школе программирования.
+      </p>
+    </div>
+
+    <div class="scale-grid reveal stagger">
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-corp.png" alt=""></div>
+        <h4>Корпорации</h4>
+        <p>Онбординг, compliance, продуктовое обучение, soft skills, апскилл команд.</p>
+      </div>
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-uni.png" alt=""></div>
+        <h4>Университеты</h4>
+        <p>Вводные и поточные курсы без бесконечных PDF-лекций и записей.</p>
+      </div>
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-school.png" alt=""></div>
+        <h4>Школы</h4>
+        <p>Факультативы, гибридные классы, авторские курсы учителей — под брендом школы.</p>
+      </div>
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-rocket.png" alt=""></div>
+        <h4>EdTech-продукты</h4>
+        <p>White-label движок курсов для вашего бренда: конверсия, удержание, NPS.</p>
+      </div>
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-bootcamp.png" alt=""></div>
+        <h4>Буткемпы и студии</h4>
+        <p>Интенсивные программы с практикой, командной работой и defense-этапами.</p>
+      </div>
+      <div class="scale-card">
+        <div class="scale-ico-3d"><img src="assets/icons-3d/icon-globe.png" alt=""></div>
+        <h4>Государственные проекты</h4>
+        <p>Массовое обучение с управляемым качеством — любой язык, любой уровень.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ENTERPRISE — dedicated B2B block
+     ========================================================= -->
+<section id="enterprise" class="enterprise enterprise-light">
+  <div class="wrap">
+    <div class="enterprise-grid reveal">
+      <div class="enterprise-copy">
+        <span class="section-eyebrow">Для бизнеса</span>
+        <h2 class="section-title">
+          Корпоративная академия,<br>
+          <span class="hl">которая понятна</span> сотрудникам.
+        </h2>
+        <p class="enterprise-lead">
+          Загрузите экспертный материал — через неделю у каждого сотрудника
+          в личном кабинете появляется интерактивный курс под бренд компании.
+        </p>
+
+        <div class="enterprise-cta-row">
+          <a href="#cta" class="btn btn-purple">
+            Собрать пилот
+            <span class="btn-arrow"><svg width="16" height="16"><use href="#i-arrow-right"/></svg></span>
+          </a>
+          <a href="#faq" class="btn btn-light-ghost">Как это работает</a>
+        </div>
+      </div>
+
+      <div class="enterprise-visual">
+        <!-- Employee dashboard — dark island on light section -->
+        <div class="emp-dashboard">
+          <div class="emp-dashboard-head">
+            <div class="emp-dashboard-avatar has-photo">
+              <img src="assets/photos/alina.jpg" alt="Алина">
+            </div>
+            <div>
+              <div class="emp-dashboard-name">Алина · Design, middle</div>
+              <div class="emp-dashboard-sub">Отдел продукта · личный кабинет</div>
+            </div>
+            <div class="emp-dashboard-streak">
+              <svg width="14" height="14"><use href="#i-flame"/></svg>
+              12 дней
+            </div>
+          </div>
+
+          <!-- Active course hero -->
+          <div class="emp-active">
+            <div class="emp-active-head">
+              <span class="emp-active-tag">сейчас проходит</span>
+              <span class="emp-active-meta">6 / 8 уроков</span>
+            </div>
+            <div class="emp-active-title">Онбординг · Product team</div>
+            <div class="emp-active-sub">Следующий урок: «Метрики команды»</div>
+            <div class="emp-active-bar"><div class="emp-active-fill" style="--w: 78%"></div></div>
+            <div class="emp-active-foot">
+              <span>78% пройдено</span>
+              <span>до 28 апреля</span>
+            </div>
+          </div>
+
+          <!-- Assigned courses -->
+          <div class="emp-dashboard-section">Назначено ещё</div>
+          <div class="emp-course-list">
+            <div class="emp-course">
+              <div class="emp-course-ic emp-course-ic-2">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg>
+              </div>
+              <div class="emp-course-body">
+                <div class="emp-course-title">Compliance · GDPR&nbsp;2026</div>
+                <div class="emp-course-bar"><div class="emp-course-fill" style="--w: 32%"></div></div>
+              </div>
+              <div class="emp-course-prog">32%</div>
+            </div>
+            <div class="emp-course">
+              <div class="emp-course-ic emp-course-ic-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+              </div>
+              <div class="emp-course-body">
+                <div class="emp-course-title">Новый продукт · Q2 релиз</div>
+                <div class="emp-course-bar"><div class="emp-course-fill" style="--w: 8%"></div></div>
+              </div>
+              <div class="emp-course-prog">8%</div>
+            </div>
+          </div>
+
+          <!-- Week activity mini chart -->
+          <div class="emp-activity">
+            <div class="emp-activity-head">
+              <span class="emp-dashboard-section" style="margin:0">Активность за неделю</span>
+              <span class="emp-activity-total">920 XP</span>
+            </div>
+            <div class="emp-activity-bars">
+              <div class="emp-activity-bar" style="--h:45%"><span>Пн</span></div>
+              <div class="emp-activity-bar" style="--h:68%"><span>Вт</span></div>
+              <div class="emp-activity-bar" style="--h:80%"><span>Ср</span></div>
+              <div class="emp-activity-bar emp-activity-today" style="--h:92%"><span>Чт</span></div>
+              <div class="emp-activity-bar" style="--h:35%"><span>Пт</span></div>
+              <div class="emp-activity-bar" style="--h:18%"><span>Сб</span></div>
+              <div class="emp-activity-bar" style="--h:0%"><span>Вс</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating sticker — admin view hint -->
+        <div class="emp-sticker" aria-hidden="true">
+          <div class="emp-sticker-row">
+            <span class="emp-sticker-dot"></span>
+            <span>HR-панель · 84 активных курса</span>
+          </div>
+          <div class="emp-sticker-row emp-sticker-row-meta">
+            <span>Completion 72%</span>
+            <span>·</span>
+            <span>NPS 8.4</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ — product / B2B oriented
+     ========================================================= -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-eyebrow">Короткий FAQ</span>
+      <h2 class="section-title">Частые вопросы</h2>
+    </div>
+
+    <div class="faq-list reveal stagger">
+      <details class="faq-item">
+        <summary class="faq-q">Для какой аудитории подходит формат? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Для любой: от школьников до топ-менеджеров. Платформа одна — сценарий и голос настраиваются под аудиторию. Подростковый курс и корпоративный compliance собираются на одних и тех же механиках, но звучат и выглядят по-разному.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Можно брендировать под свою школу или компанию? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Да. White-label на уровне домена, логотипа, цветовой палитры и шрифтов. Дизайн-токены платформы задокументированы, ребрендинг — один спринт.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Какие языки поддерживаете? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Интерфейс — любой. Голос — 30+ языков без переверстки плеера. Если нужна редкая локализация — делаем под ключ.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Сколько стоит один урок произвести? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Эксперт пишет сценарий за 1–2 дня. Пайплайн собирает финальный интерактивный урок за часы. Себестоимость одного урока — заметно ниже классического видео-продакшна. Конкретные цифры — в демо-разговоре под ваш объём.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Кто владеет контентом после производства? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Заказчик. Весь сценарный материал, звук, сцены — ваши. Платформа — это рантайм, который их воспроизводит. Хостинг — у нас или у вас.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Есть ли персонализация под ученика? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Да — контроль темпа, навигация по сегментам, адаптивные квизы. В пайплайне — персонализация сценария: траектория подстраивается под ответы и прогресс ученика.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Можно встроить в LMS / Moodle / Bitrix / Google Classroom? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+        <div class="faq-a">Да. Поддержка SCORM и LTI для интеграции с корпоративными и образовательными LMS. Также — standalone-ссылки и эмбеды.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+<section id="cta" class="final">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <span class="final-eyebrow">запустить свою академию</span>
+      <h2 class="final-title">
+        Покажем за 30 минут.<br>
+        Запустим <em class="hl">за месяц.</em>
+      </h2>
+      <p class="final-sub">
+        Школа, университет, корпоративная академия, EdTech-продукт — дайте нам
+        30 минут. Покажем платформу, посчитаем под ваш кейс, соберём пилот.
+      </p>
+      <div class="final-cta-row">
+        <a href="mailto:hello@creata-academy.com?subject=Demo%20request" class="btn btn-primary">
+          Запросить демо
+          <span class="btn-arrow"><svg width="16" height="16"><use href="#i-arrow-right"/></svg></span>
+        </a>
+        <a href="#product" class="btn btn-ghost">Ещё раз посмотреть формат</a>
+      </div>
+      <div class="final-note">отвечаем в течение 1 рабочего дня · без спама и длинных лендингов</div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <img class="brand-mark" src="assets/creata-logo.svg" alt="Creata Academy">
+    </div>
+    <ul class="footer-links">
+      <li><a href="#product">Продукт</a></li>
+      <li><a href="#format">Формат</a></li>
+      <li><a href="#pipeline">Производство</a></li>
+      <li><a href="#scale">Кому</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Creata Academy</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

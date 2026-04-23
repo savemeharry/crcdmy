@@ -1,0 +1,6 @@
+.DS_Store
+.sec-*.png
+.smoke-*.png
+*.log
+.env
+.env.local
